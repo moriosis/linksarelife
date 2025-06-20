@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { getFirestore, collection, addDoc, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD...your-real-key...",
+  apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jy71kCdrC98",
   authDomain: "linksarelife.firebaseapp.com",
   projectId: "linksarelife",
   storageBucket: "linksarelife.appspot.com",
