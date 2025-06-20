@@ -1,18 +1,47 @@
-<!-- Add in index.html (before your app.js) -->
-<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jy71kCdrC98",
-    authDomain: "linksarelife.firebaseapp.com",
-    databaseURL: "https://linksarelife-default-rtdb.firebaseio.com",
-    projectId: "linksarelife",
-    storageBucket: "linksarelife.appspot.com",
-    messagingSenderId: "654538664176",
-    appId: "1:654538664176:web:2b26a3aca9e9f9668bfa35"
-  };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Links Are Life</title>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jy71kCdrC98",
+      authDomain: "linksarelife.firebaseapp.com",
+      databaseURL: "https://linksarelife-default-rtdb.firebaseio.com",
+      projectId: "linksarelife",
+      storageBucket: "linksarelife.appspot.com",
+      messagingSenderId: "654538664176",
+      appId: "1:654538664176:web:2b26a3aca9e9f9668bfa35"
+    };
 
-  firebase.initializeApp(firebaseConfig);
-</script>
-<script src="/app.js"></script> <!-- Your script after Firebase is loaded -->
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input { margin: 5px; padding: 6px; }
+    button { margin: 5px; padding: 6px 12px; }
+  </style>
+</head>
+<body>
+  <h1>Links Are Life</h1>
+  <p>The best links in life are free.</p>
+
+  <input type="text" id="email" placeholder="Email" />
+  <input type="password" id="password" placeholder="Password" />
+  <br />
+  <button onclick="signUp()">Sign Up</button>
+  <button onclick="signIn()">Sign In</button>
+  <br />
+  <input type="text" id="link" placeholder="Paste a link" />
+  <button onclick="saveLink()">Save Link</button>
+
+  <ul id="linkList"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
+	
