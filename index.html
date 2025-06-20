@@ -1,35 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Links Are Life</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #f4f4f4;
-            color: #333;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 1.5rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Links Are Life - Login</title>
 </head>
 <body>
-    <div>
-        <h1>Links Are Life</h1>
-        <p>The best links in life are free.</p>
-        <p><em>Coming soon...</em></p>
-    </div>
+  <h1>Links Are Life</h1>
+  <p>The best links in life are free.</p>
+  <div>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="signIn()">Sign In</button>
+  </div>
+  <div>
+    <input type="text" id="link" placeholder="Paste a link">
+    <button onclick="saveLink()">Save Link</button>
+  </div>
+  <ul id="linkList"></ul>
+
+  <script type="module" src="app.js"></script>
 </body>
 </html>
+
