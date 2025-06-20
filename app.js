@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "linksarelife",
   storageBucket: "linksarelife.appspot.com",
   messagingSenderId: "654538664176",
-  appId: "1:654538664176:web:xxxxxxxxxxxxxx"
+  appId: "1:654538664176:web:2b26a3aca9e9f9668bfa35"
 };
 
 const app = initializeApp(firebaseConfig);
