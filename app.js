@@ -1,17 +1,3 @@
-
-Conversation opened. 1 unread message. 
-
-Skip to content
-Using Gmail with screen readers
-1 of 23,917
-New app.js
-Inbox
-Dan Morio <dan.morio@gmail.com>
-	
-2:10 AM (2 minutes ago)
-	
-to me
-
 const auth = firebase.auth();
 const db = firebase.firestore();
 
