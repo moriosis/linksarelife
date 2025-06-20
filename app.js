@@ -26,7 +26,7 @@ async function signUp() {
     alert("Error: " + error.message);
   }
 }
-// force deploy
+
 async function signIn() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
