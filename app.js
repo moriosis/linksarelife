@@ -68,3 +68,7 @@ async function loadLinks(email) {
     list.appendChild(li);
   });
 }
+
+document.getElementById("signupBtn").addEventListener("click", signUp);
+document.getElementById("signinBtn").addEventListener("click", signIn);
+document.getElementById("saveLinkBtn").addEventListener("click", saveLink);
