@@ -14,7 +14,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jv71kCdrC98",
+  apiKey: "1:654538664176:web:2b26a3aca9e9f9668bfa35",
   authDomain: "linksarelife.firebaseapp.com",
   databaseURL: "https://linksarelife-default-rtdb.firebaseio.com",
   projectId: "linksarelife",
