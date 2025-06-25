@@ -14,14 +14,16 @@ import {
 } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "1:654538664176:web:2b26a3aca9e9f9668bfa35",
-  authDomain: "linksarelife.firebaseapp.com",
-  databaseURL: "https://linksarelife-default-rtdb.firebaseio.com",
-  projectId: "linksarelife",
-  storageBucket: "linksarelife.appspot.com",
-  messagingSenderId: "654538664176",
-  appId: "1:654538664176:web:2b26a3aca9e9f9668bfa35"
+
+    apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jv71kCdrc98",
+    authDomain: "linksarelife.firebaseapp.com",
+    databaseURL: "https://linksarelife-default-rtdb.firebaseio.com",
+    projectId: "linksarelife",
+    storageBucket: "linksarelife.firebasestorage.app",
+    messagingSenderId: "654538664176",
+    appId: "1:654538664176:web:2b26a3aca9e9f9668bfa35"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
