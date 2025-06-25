@@ -1,12 +1,22 @@
-// ✅ These go at the very top of the file
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js';
-import { getFirestore, collection, addDoc, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js';
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs
+} from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js';
 
-// ✅ Your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jy71kCdrC98",
+  apiKey: "AIzaSyBiBYSEHiRCm-6kMx8utfF9jv71kCdrC98",
   authDomain: "linksarelife.firebaseapp.com",
+  databaseURL: "https://linksarelife-default-rtdb.firebaseio.com",
   projectId: "linksarelife",
   storageBucket: "linksarelife.appspot.com",
   messagingSenderId: "654538664176",
@@ -17,8 +27,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// 🔐 Sign Up
-async function signUp() {
+window.signUp = async function () {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   try {
@@ -27,10 +36,9 @@ async function signUp() {
   } catch (error) {
     alert("Error: " + error.message);
   }
-}
+};
 
-// 🔐 Sign In
-async function signIn() {
+window.signIn = async function () {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   try {
@@ -40,41 +48,31 @@ async function signIn() {
   } catch (error) {
     alert("Error: " + error.message);
   }
-}
+};
 
-// 💾 Save a link
-async function saveLink() {
+window.saveLink = async function () {
   const link = document.getElementById("link").value;
   const email = document.getElementById("email").value;
-  if (!link || !email) return;
-
   try {
     await addDoc(collection(db, "links"), {
+      link,
       user: email,
-      url: link,
       timestamp: new Date()
     });
-    alert("Link saved!");
     loadLinks(email);
   } catch (error) {
     alert("Error saving link: " + error.message);
   }
-}
+};
 
-// 📜 Load links for user
 async function loadLinks(email) {
   const q = query(collection(db, "links"), where("user", "==", email));
-  const querySnapshot = await getDocs(q);
+  const snapshot = await getDocs(q);
   const list = document.getElementById("linkList");
   list.innerHTML = "";
-  querySnapshot.forEach((doc) => {
+  snapshot.forEach((doc) => {
     const li = document.createElement("li");
-    li.textContent = doc.data().url;
+    li.textContent = doc.data().link;
     list.appendChild(li);
   });
 }
-
-// ✅ Hook up buttons to functions
-document.getElementById("signupBtn").addEventListener("click", signUp);
-document.getElementById("signinBtn").addEventListener("click", signIn);
-document.getElementById("saveLinkBtn").addEventListener("click", saveLink);
