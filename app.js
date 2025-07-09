@@ -1,3 +1,5 @@
+import { ResetPassword } from "./ResetPassword.js";
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js';
 import {
   getAuth,
@@ -78,3 +80,9 @@ async function loadLinks(email) {
     list.appendChild(li);
   });
 }
+
+// Reset password link click handler
+document.getElementById("resetLink").addEventListener("click", (e) => {
+  e.preventDefault();
+  ResetPassword();
+});
