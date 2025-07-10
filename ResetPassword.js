@@ -1,4 +1,4 @@
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
 export function ResetPassword() {
   const appDiv = document.getElementById("app");
