@@ -81,8 +81,3 @@ async function loadLinks(email) {
   });
 }
 
-// Reset password link click handler
-document.getElementById("resetLink").addEventListener("click", (e) => {
-  e.preventDefault();
-  ResetPassword();
-});
