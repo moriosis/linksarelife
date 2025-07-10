@@ -86,8 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (resetLink) {
     resetLink.addEventListener("click", (e) => {
       e.preventDefault();
-//ResetPassword();
-alert("Reset clicked!");
+      alert("✅ DOM listener is working");
     });
+  } else {
+    alert("❌ #resetLink not found");
   }
 });
