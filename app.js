@@ -81,3 +81,12 @@ async function loadLinks(email) {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const resetLink = document.getElementById("resetLink");
+  if (resetLink) {
+    resetLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      ResetPassword();
+    });
+  }
+});
