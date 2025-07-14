@@ -1,6 +1,3 @@
-<body>
-  <div id="app">
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,26 +10,53 @@
   </style>
 </head>
 <body>
-  <h1>Links Are Life</h1>
-  <p>The best links in life are free.</p>
+  <div id="app">
+    <h1>Links Are Life</h1>
+    <p>The best links in life are free.</p>
 
-  <input type="text" id="email" placeholder="Email" />
-  <input type="password" id="password" placeholder="Password" />
-  <button onclick="signUp()">Sign Up</button>
-  <button onclick="signIn()">Sign In</button>
-<p><a href="#" id="resetLink">Forgot your password?</a></p>
+    <input type="text" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="signIn()">Sign In</button>
+    <p><a href="#" id="resetLink">Forgot your password?</a></p>
 
-<input type="text" id="phone" placeholder="Enter your phone number" />
-<button onclick="sendResetCode()">Send Reset Code</button>
+    <input type="text" id="phone" placeholder="Enter your phone number" />
+    <button onclick="sendResetCode()">Send Reset Code</button>
 
-  <br /><br />
+    <br /><br />
 
-  <input type="text" id="link" placeholder="Paste a link" />
-  <button onclick="saveLink()">Save Link</button>
+    <input type="text" id="link" placeholder="Paste a link" />
+    <button onclick="saveLink()">Save Link</button>
 
-  <ul id="linkList"></ul>
-
+    <ul id="linkList"></ul>
   </div>
+
+  <!-- Your main app logic -->
   <script type="module" src="app.js"></script>
-  </body>
+
+  <!-- Password Reset SMS Function -->
+  <script>
+    function sendResetCode() {
+      const phone = document.getElementById("phone").value;
+
+      fetch("https://us-central1-linksarelife.cloudfunctions.net/sendPasswordResetSMS", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: phone })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert("Reset code sent successfully!");
+        } else {
+          alert("Error: " + (data.error || "Failed to send SMS."));
+        }
+      })
+      .catch(err => {
+        console.error("Error sending reset code:", err);
+        alert("Request failed. Check console for details.");
+      });
+    }
+  </script>
+</body>
 </html>
